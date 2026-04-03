@@ -26,14 +26,13 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install Vite+
-        run: npm install -g vite-plus@0.1.15
+      - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
 
       - name: Install dependencies
-        run: vp install
+        run: pnpm install
 
       - name: Build demo
-        run: vp build --config demo/vite.config.ts --base /boneyard-vue/
+        run: pnpm exec vp build --config demo/vite.config.ts --base /boneyard-vue/
 
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
