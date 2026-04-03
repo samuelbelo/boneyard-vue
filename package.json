@@ -1,0 +1,87 @@
+{
+  "name": "boneyard-vue",
+  "version": "0.0.0",
+  "description": "Pixel-perfect skeleton loading screens for Vue 3. Wrap your component in <BoneyardSkeleton> and boneyard snapshots the real DOM layout.",
+  "keywords": [
+    "loading",
+    "placeholder",
+    "skeleton",
+    "skeleton-screen",
+    "vue",
+    "vue3",
+    "zero-layout-shift"
+  ],
+  "homepage": "https://github.com/samuelbelo/boneyard-vue#readme",
+  "bugs": {
+    "url": "https://github.com/samuelbelo/boneyard-vue/issues"
+  },
+  "license": "MIT",
+  "author": "Samuel Belo",
+  "contributors": [
+    "0xGF (https://github.com/0xGF) — original boneyard-js core engine"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelbelo/boneyard-vue.git"
+  },
+  "bin": {
+    "boneyard-vue": "bin/cli.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./vue": "./dist/vue.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build",
+    "demo": "vp dev --config demo/vite.config.ts"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^25.5.0",
+    "@typescript/native-preview": "7.0.0-dev.20260328.1",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/test-utils": "^2.4.0",
+    "bumpp": "^11.0.1",
+    "canvas": "^3.2.2",
+    "happy-dom": "^20.8.9",
+    "semantic-release": "^24.0.0",
+    "typescript": "^6.0.2",
+    "vite-plus": "^0.1.14",
+    "vue": "^3.5.0"
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    }
+  },
+  "optionalDependencies": {
+    "@chenglou/pretext": "^0.0.3"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "canvas"
+    ],
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
+  }
+}
