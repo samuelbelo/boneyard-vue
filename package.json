@@ -1,6 +1,6 @@
 {
   "name": "boneyard-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pixel-perfect skeleton loading screens for Vue 3. Wrap your component in <BoneyardSkeleton> and boneyard snapshots the real DOM layout.",
   "keywords": [
     "loading",

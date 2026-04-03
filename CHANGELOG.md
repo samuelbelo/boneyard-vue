@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/samuelbelo/boneyard-vue/compare/v1.0.0...v1.0.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* align renderBones with upstream — use % for x/w units ([4177fda](https://github.com/samuelbelo/boneyard-vue/commit/4177fda87bcdb4a7a259b1bba610fe60c783201b))
+* correct deploy-pages action SHA ([2f79eb6](https://github.com/samuelbelo/boneyard-vue/commit/2f79eb635c079f949dc3a5f69c087417ea24a9e3))
+* pixel-perfect skeleton rendering — auto-snapshot DOM and fix circle bones ([99716cb](https://github.com/samuelbelo/boneyard-vue/commit/99716cbbaeb4afdd59ae8ca70f48253d7aad22b7))
+
 # Changelog
 
 ## [Unreleased]
