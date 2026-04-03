@@ -23,7 +23,7 @@ export function renderBones(skel: SkeletonResult, color?: string, animate?: bool
           ? b.r
           : "8px"
         : `${Number.isFinite(b.r) ? b.r : 8}px`;
-    html += `<div class="boneyard-bone" style="position:absolute;left:${b.x}px;top:${b.y}px;width:${b.w}px;height:${b.h}px;border-radius:${radius};background-color:${c}"></div>`;
+    html += `<div class="boneyard-bone" style="position:absolute;left:${b.x}%;top:${b.y}px;width:${b.w}%;height:${b.h}px;border-radius:${radius};background-color:${c}"></div>`;
   }
 
   html += "</div>";

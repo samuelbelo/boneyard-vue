@@ -30,8 +30,8 @@ describe("renderBones", () => {
       ],
     };
     const html = renderBones(skel);
-    expect(html).toContain("left:0px;top:0px;width:400px;height:180px");
-    expect(html).toContain("left:0px;top:190px;width:200px;height:14px");
+    expect(html).toContain("left:0%;top:0px;width:400%;height:180px");
+    expect(html).toContain("left:0%;top:190px;width:200%;height:14px");
   });
 
   it("handles circle radius", () => {
