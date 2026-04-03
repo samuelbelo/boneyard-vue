@@ -25,7 +25,7 @@ export function adjustColor(color: string, amount: number): string {
     const nb = Math.round(b + (255 - b) * amount);
     return `#${nr.toString(16).padStart(2, "0")}${ng.toString(16).padStart(2, "0")}${nb.toString(16).padStart(2, "0")}`;
   }
-  return color;
+  return "#e0e0e0";
 }
 
 /**

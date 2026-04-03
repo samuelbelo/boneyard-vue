@@ -28,9 +28,9 @@ describe("adjustColor", () => {
     expect(result).toMatch(/^rgba\(/);
   });
 
-  it("returns original for unsupported format", () => {
+  it("returns safe default for unsupported format", () => {
     const result = adjustColor("hsl(0, 0%, 0%)", 0.5);
-    expect(result).toBe("hsl(0, 0%, 0%)");
+    expect(result).toBe("#e0e0e0");
   });
 
   it("handles mid-range hex colors", () => {
@@ -39,10 +39,9 @@ describe("adjustColor", () => {
     expect(r).toBeGreaterThan(0xe0);
   });
 
-  it("ignores invalid hex (not 6-digit)", () => {
+  it("returns safe default for invalid hex (not 6-digit)", () => {
     const result = adjustColor("#fff", 0.5);
-    // Shorthand hex is not matched, returns as-is
-    expect(result).toBe("#fff");
+    expect(result).toBe("#e0e0e0");
   });
 });
 
