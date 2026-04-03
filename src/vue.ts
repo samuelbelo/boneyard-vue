@@ -138,21 +138,22 @@ export const BoneyardSkeleton = defineComponent({
         const dark = isDark.value;
         const sy = scaleY.value;
 
-        const boneElements = bones.map((b: Bone) =>
-          h("div", {
+        const boneElements = bones.map((b: Bone) => {
+          const isCircle = b.r === "50%";
+          return h("div", {
             key: `${b.x}-${b.y}-${b.w}-${b.h}`,
             style: {
               position: "absolute",
               left: `${b.x}%`,
               top: `${b.y * sy}px`,
-              width: `${b.w}%`,
+              width: isCircle ? `${b.h * sy}px` : `${b.w}%`,
               height: `${b.h * sy}px`,
               borderRadius: typeof b.r === "string" ? b.r : `${b.r}px`,
               backgroundColor: b.c ? adjustColor(color, dark ? 0.03 : 0.45) : color,
               animation: props.animate ? "boneyard-pulse 1.8s ease-in-out infinite" : undefined,
             },
-          }),
-        );
+          });
+        });
 
         const animationStyle = props.animate
           ? h("style", null, [

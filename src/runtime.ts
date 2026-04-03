@@ -17,13 +17,15 @@ export function renderBones(skel: SkeletonResult, color?: string, animate?: bool
   let html = `${keyframes}<div class="boneyard" style="position:relative;width:100%;height:${skel.height}px">`;
 
   for (const b of skel.bones) {
+    const isCircle = b.r === "50%";
     const radius =
       typeof b.r === "string"
         ? /^[\d.]+(%|px)?$/.test(b.r)
           ? b.r
           : "8px"
         : `${Number.isFinite(b.r) ? b.r : 8}px`;
-    html += `<div class="boneyard-bone" style="position:absolute;left:${b.x}%;top:${b.y}px;width:${b.w}%;height:${b.h}px;border-radius:${radius};background-color:${c}"></div>`;
+    const width = isCircle ? `${b.h}px` : `${b.w}%`;
+    html += `<div class="boneyard-bone" style="position:absolute;left:${b.x}%;top:${b.y}px;width:${width};height:${b.h}px;border-radius:${radius};background-color:${c}"></div>`;
   }
 
   html += "</div>";
